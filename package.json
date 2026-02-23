@@ -1,0 +1,28 @@
+{
+  "name": "sea-patch-lab",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Demo CLI + SEA binary patch lab",
+  "type": "commonjs",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "dev": "tsx src/index.tsx",
+    "build:bundle": "esbuild src/index.tsx --bundle --minify --platform=node --format=esm --target=node22 --define:process.env.DEV=\\\"false\\\" --external:react-devtools-core --outfile=dist/bundle.mjs",
+    "build": "bash scripts/build.sh",
+    "patch": "bash scripts/patch.sh",
+    "patch-check": "bash scripts/patch-check.sh"
+  },
+  "dependencies": {
+    "ink": "^5.2.1",
+    "react": "^18.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.12.0",
+    "@types/react": "^18.3.12",
+    "esbuild": "^0.25.0",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.3"
+  }
+}
