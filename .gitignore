@@ -3,4 +3,5 @@ node_modules
 dist
 demo-cli
 demo-cli.bak
+.sea-patch-state
 *.log

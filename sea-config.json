@@ -1,5 +1,5 @@
 {
-  "main": "dist/bundle.mjs",
+  "main": "dist/bundle.cjs",
   "output": "dist/sea-prep.blob",
   "disableExperimentalSEAWarning": true
 }

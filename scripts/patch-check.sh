@@ -1,4 +1,9 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-echo "patch-check.sh placeholder"
+ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+cd "$ROOT_DIR"
+
+scripts/patch.sh status || true
+scripts/patch.sh auto
+scripts/patch.sh status

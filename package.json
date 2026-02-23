@@ -9,19 +9,20 @@
   },
   "scripts": {
     "dev": "tsx src/index.tsx",
-    "build:bundle": "esbuild src/index.tsx --bundle --minify --platform=node --format=esm --target=node22 --define:process.env.DEV=\\\"false\\\" --external:react-devtools-core --outfile=dist/bundle.mjs",
+    "build:bundle": "esbuild src/index.tsx --bundle --minify --platform=node --format=cjs --target=node22 --main-fields=main,module --banner:js='var _a;' --outfile=dist/bundle.cjs",
     "build": "bash scripts/build.sh",
     "patch": "bash scripts/patch.sh",
     "patch-check": "bash scripts/patch-check.sh"
   },
   "dependencies": {
-    "ink": "^5.2.1",
-    "react": "^18.3.1"
+    "ink": "^2.7.1",
+    "react": "^16.14.0"
   },
   "devDependencies": {
     "@types/node": "^22.12.0",
-    "@types/react": "^18.3.12",
+    "@types/react": "^16.14.59",
     "esbuild": "^0.25.0",
+    "postject": "^1.0.0-alpha.6",
     "tsx": "^4.19.2",
     "typescript": "^5.7.3"
   }
